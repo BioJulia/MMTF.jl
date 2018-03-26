@@ -1,15 +1,15 @@
-# mmtf.jl
+# MMTF.jl
 **Development Status:**
 
-[![Build Status](https://travis-ci.org/BioJulia/mmtf.jl.svg?branch=master)](https://travis-ci.org/BioJulia/mmtf.jl) 
-[![Build status](https://ci.appveyor.com/api/projects/status/579x6tdoojay90go/branch/master?svg=true)](https://ci.appveyor.com/project/joels94/mmtf-jl-c9ura/branch/master) 
-[![codecov](https://codecov.io/gh/BioJulia/mmtf.jl/branch/master/graph/badge.svg)](https://codecov.io/gh/BioJulia/mmtf.jl)
+[![Build Status](https://travis-ci.org/BioJulia/MMTF.jl.svg?branch=master)](https://travis-ci.org/BioJulia/MMTF.jl)
+[![Build status](https://ci.appveyor.com/api/projects/status/00hw0l0p0is8vgno?svg=true)](https://ci.appveyor.com/project/joels94/mmtf-jl-5xt4m)
+[![codecov](https://codecov.io/gh/BioJulia/MMTF.jl/branch/master/graph/badge.svg)](https://codecov.io/gh/BioJulia/MMTF.jl)
 
 ## Description
 The Macromolecular Transmission Format (MMTF) is a new compact binary format to transmit and store biomolecular structures for fast 3D visualization and analysis
 
 ## Installation
-Install mmtf from the Julia REPL:
+Install MMTF.jl from the Julia REPL:
 
 ```julia
 julia> Pkg.clone("https://github.com/BioJulia/MMTF.jl.git")
