@@ -1,4 +1,12 @@
 # MMTF.jl
+
+**Latest Release:**
+
+[![Latest Release](https://img.shields.io/badge/release-v0.0.1-blue.svg)](https://github.com/BioJulia/MMTF.jl/releases/latest)
+[![MMTF](http://pkg.julialang.org/badges/MMTF_0.6.svg)](http://pkg.julialang.org/detail/MMTF)
+[![License](https://img.shields.io/badge/license-MIT-green.svg)](https://github.com/BioJulia/MMTF.jl/blob/master/LICENSE)
+[![BioJulia Maintainer : joels94](https://img.shields.io/badge/BioJulia%20Maintainer-joels94-orange.svg)](https://github.com/joels94)
+
 **Development Status:**
 
 [![Build Status](https://travis-ci.org/BioJulia/MMTF.jl.svg?branch=master)](https://travis-ci.org/BioJulia/MMTF.jl)
@@ -12,10 +20,8 @@ The Macromolecular Transmission Format (MMTF) is a new compact binary format to 
 Install MMTF.jl from the Julia REPL:
 
 ```julia
-julia> Pkg.clone("https://github.com/BioJulia/MMTF.jl.git")
+julia> Pkg.add("MMTF")
 ```
-
-Note: The package will be published soon!
 
 ## Usage
 **To download and parse a MMTF file as Julia Dict from RCSB database.**
