@@ -17,43 +17,43 @@ using MMTF
     @test eval_data==output_data
 
     #deltarecursivefloatdecode
-    test_data = b"\x7f\xffD\xab\x01\x8f\xff\xca"
+    test_data =  UInt8[0x7f,0xff,0x44,0xab,0x01,0x8f,0xff,0xca]
     output_data = Float32[50.346, 50.745, 50.691]
     eval_data = MMTF.deltarecursivefloatdecode(test_data,1000)
     @test eval_data==output_data
 
     #runlengthfloatdecode
-    test_data = b"\x00\x00\x00d\x00\x00\x00\x03"
+    test_data = UInt8[ 0x00,0x00,0x00,0x64,0x00,0x00,0x00,0x03]
     output_data = Float32[1.00,1.00,1.00]
     eval_data = MMTF.runlengthfloatdecode(test_data,100)
     @test eval_data==output_data
 
     #runlengthdeltaintdecode
-    test_data = b"\x00\x00\x00\x01\x00\x00\x00\x07"
+    test_data = UInt8[ 0x00,0x00,0x00,0x01,0x00,0x00,0x00,0x07]
     output_data = Int32[1,2,3,4,5,6,7]
     eval_data = MMTF.runlengthdeltaintdecode(test_data)
     @test eval_data==output_data
 
     #runlengthchardecode
-    test_data = b"\x00\x00\x00\x41\x00\x00\x00\x04"
+    test_data = UInt8[ 0x00,0x00,0x00,0x41,0x00,0x00,0x00,0x04]
     output_data = Char['A','A','A','A']
     eval_data = MMTF.runlengthchardecode(test_data)
     @test eval_data==output_data
 
     #stringdecode
-    test_data = b"B\x00\x00\x00A\x00\x00\x00C\x00\x00\x00A\x00\x00\x00A\x00\x00\x00A\x00\x00\x00"
+    test_data = UInt8[0x42, 0x00, 0x00, 0x00, 0x41, 0x00, 0x00, 0x00, 0x43, 0x00, 0x00, 0x00, 0x41, 0x00, 0x00, 0x00, 0x41, 0x00, 0x00, 0x00, 0x41, 0x00, 0x00, 0x00]
     output_data = String["B","A","C","A","A","A"]
     eval_data = MMTF.stringdecode(test_data)
     @test eval_data==output_data
 
     #intdecode
-    test_data = b"\x07\x06\x06\x07\x07"
+    test_data = UInt8[0x07, 0x06, 0x06, 0x07, 0x07]
     output_data = Int8[7,6,6,7,7]
     eval_data = MMTF.intdecode(test_data)
     @test eval_data==output_data
 
     #fourbyteintdecode
-    test_data = b"\x00\x00\x00\x01\x00\x02\x00\x01\x00\x00\x00\x00\x00\x00\x00\x02"
+    test_data = UInt8[0x00, 0x00, 0x00, 0x01, 0x00, 0x02, 0x00, 0x01, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02]
     output_data = Int32[1, 131073, 0, 2]
     eval_data = MMTF.fourbyteintdecode(test_data)
     @test eval_data==output_data
@@ -73,43 +73,43 @@ end
     @test eval_data==output_data
     
     #deltarecursivefloatencode
-    output_data = b"\x7f\xffD\xab\x01\x8f\xff\xca"
+    output_data = UInt8[0x7f, 0xff, 0x44, 0xab, 0x01, 0x8f, 0xff, 0xca]
     test_data = Float32[50.346, 50.745, 50.691]
     eval_data = MMTF.deltarecursivefloatencode(test_data,1000)
     @test eval_data==output_data
 
     #runlengthfloatencode
-    output_data = b"\x00\x00\x00d\x00\x00\x00\x03"
+    output_data = UInt8[0x00, 0x00, 0x00, 0x64, 0x00, 0x00, 0x00, 0x03]
     test_data = Float32[1.00,1.00,1.00]
     eval_data = MMTF.runlengthfloatencode(test_data,100)
     @test eval_data==output_data
 
     #runlengthdeltaintencode
-    output_data = b"\x00\x00\x00\x01\x00\x00\x00\x07"
+    output_data = UInt8[0x00, 0x00, 0x00, 0x01, 0x00, 0x00, 0x00, 0x07]
     test_data = Int32[1,2,3,4,5,6,7]
     eval_data = MMTF.runlengthdeltaintencode(test_data)
     @test eval_data==output_data
 
     #runlengthcharencode
-    output_data = b"\x00\x00\x00\x41\x00\x00\x00\x04"
+    output_data = UInt8[0x00, 0x00, 0x00, 0x41, 0x00, 0x00, 0x00, 0x04]
     test_data = Char['A','A','A','A']
     eval_data = MMTF.runlengthcharencode(test_data)
     @test eval_data==output_data
 
     #stringencode
-    output_data = b"B\x00\x00\x00A\x00\x00\x00C\x00\x00\x00A\x00\x00\x00A\x00\x00\x00A\x00\x00\x00"
+    output_data = UInt8[0x42, 0x00, 0x00, 0x00, 0x41, 0x00, 0x00, 0x00, 0x43, 0x00, 0x00, 0x00, 0x41, 0x00, 0x00, 0x00, 0x41, 0x00, 0x00, 0x00, 0x41, 0x00, 0x00, 0x00]
     test_data = String["B","A","C","A","A","A"]
     eval_data = MMTF.stringencode(test_data)
     @test eval_data==output_data
 
     #intencode
-    output_data = b"\x07\x06\x06\x07\x07"
+    output_data = UInt8[0x07, 0x06, 0x06, 0x07, 0x07]
     test_data = Int8[7,6,6,7,7]
     eval_data = MMTF.intencode(test_data)
     @test eval_data==output_data
 
     #fourbyteintencode
-    output_data = b"\x00\x00\x00\x01\x00\x02\x00\x01\x00\x00\x00\x00\x00\x00\x00\x02"
+    output_data = UInt8[0x00, 0x00, 0x00, 0x01, 0x00, 0x02, 0x00, 0x01, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02]
     test_data = Int32[1, 131073, 0, 2]
     eval_data = MMTF.fourbyteintencode(test_data)
     @test eval_data==output_data
@@ -117,19 +117,19 @@ end
 
 @testset "Converters Test" begin
     #Bytes to 1 byte ints
-    test_data = b"\x07\x06\x06\x07\x07"
+    test_data = UInt8[0x07, 0x06, 0x06, 0x07, 0x07]
     output_data = Int8[7,6,6,7,7]
     eval_data = MMTF.ints(test_data,1)
     @test eval_data==output_data
 
     #Bytes to 2 byte ints
-    test_data = b"\x00\x00\x00\x01\x00\x02\x00\x01\x00\x00\x00\x00\x00\x00\x00\x02"
+    test_data = UInt8[0x00, 0x00, 0x00, 0x01, 0x00, 0x02, 0x00, 0x01, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02]
     output_data = Int16[0,1,2,1,0,0,0,2]
     eval_data = MMTF.ints(test_data,2)
     @test eval_data==output_data
 
     #Bytes to 4 byte ints
-    test_data = b"\x00\x00\x00\x01\x00\x02\x00\x01\x00\x00\x00\x00\x00\x00\x00\x02"
+    test_data = UInt8[0x00, 0x00, 0x00, 0x01, 0x00, 0x02, 0x00, 0x01, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02]
     output_data = Int32[1, 131073, 0, 2]
     eval_data = MMTF.ints(test_data,4)
     @test eval_data==output_data
@@ -147,7 +147,7 @@ end
     @test eval_data==output_data
 
     #Ints to bytes
-    output_data = b"\x00\x00\x00\x01\x00\x02\x00\x01\x00\x00\x00\x00\x00\x00\x00\x02"
+    output_data = UInt8[0x00, 0x00, 0x00, 0x01, 0x00, 0x02, 0x00, 0x01, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02]
     test_data = Int32[1, 131073, 0, 2]
     eval_data = MMTF.bytes(test_data)
     @test eval_data==output_data
@@ -159,13 +159,13 @@ end
     @test eval_data==output_data
 
     #decodechainlist
-    test_data = b"A\x00\x00\x00A\x00\x00\x00A\x00\x00\x00A\x00\x00\x00A\x00\x00\x00A\x00\x00\x00"
+    test_data = UInt8[0x41, 0x00, 0x00, 0x00, 0x41, 0x00, 0x00, 0x00, 0x41, 0x00, 0x00, 0x00, 0x41, 0x00, 0x00, 0x00, 0x41, 0x00, 0x00, 0x00, 0x41, 0x00, 0x00, 0x00]
     output_data = String["A", "A","A","A","A","A"]
     eval_data = MMTF.decodechainlist(test_data)
     @test eval_data==output_data
 
     #encodechainlist
-    output_data = b"A\x00\x00\x00A\x00\x00\x00A\x00\x00\x00A\x00\x00\x00A\x00\x00\x00A\x00\x00\x00"
+    output_data = UInt8[0x41, 0x00, 0x00, 0x00, 0x41, 0x00, 0x00, 0x00, 0x41, 0x00, 0x00, 0x00, 0x41, 0x00, 0x00, 0x00, 0x41, 0x00, 0x00, 0x00, 0x41, 0x00, 0x00, 0x00]
     test_data = String["A", "A","A","A","A","A"]
     eval_data = MMTF.encodechainlist(test_data)
     @test eval_data==output_data
@@ -185,7 +185,7 @@ end
 
 @testset "Utils Test" begin
     #parseheader
-    test_data = b"\x00\x00\x00\x01\x00\x02\x00\x01\x00\x00\x00\x00\x00\x00\x00\x02"
+    test_data = UInt8[0x00, 0x00, 0x00, 0x01, 0x00, 0x02, 0x00, 0x01, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02]
     codec,length,param,bytearray = MMTF.parseheader(test_data)
     @test codec==1
     @test length==131073
@@ -193,11 +193,11 @@ end
     @test size(bytearray,1)==4
 
     #addheader
-    test_data = b"\x00\x00\x00\x01\x00\x02\x00\x01\x00\x00\x00\x00\x00\x00\x00\x02"
+    test_data = UInt8[0x00, 0x00, 0x00, 0x01, 0x00, 0x02, 0x00, 0x01, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02]
     codec=1
     length=131073
     param=0
-    bytearray=b"\x00\x00\x00\x02"
+    bytearray=UInt8[0x00, 0x00, 0x00, 0x02]
     eval_data = MMTF.addheader(bytearray,codec,length,param) 
     @test eval_data==test_data
 end
@@ -253,6 +253,7 @@ id_list = [
     "1ema"]
 
     for pdbid in id_list
+        println("PDB ID - ",pdbid)
         data_in = MMTF.fetchmmtf(pdbid)
         MMTF.writemmtf(data_in,"$(pdbid).mmtf")
         data_rt = MMTF.parsemmtf("$(pdbid).mmtf")

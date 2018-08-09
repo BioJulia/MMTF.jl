@@ -10,11 +10,11 @@ num: the number of bytes per int
 function ints(in_bytes::Array{UInt8,1}, num)
     out_arr = Int[]
     if num == 1
-        out_arr = hton(reinterpret(Int8,in_bytes))
+        out_arr = htonofarray(reinterpret(Int8,in_bytes))
     elseif num == 2
-        out_arr = hton(reinterpret(Int16,in_bytes))
+        out_arr = htonofarray(reinterpret(Int16,in_bytes))
     elseif num == 4
-        out_arr = hton(reinterpret(Int32,in_bytes))
+        out_arr = htonofarray(reinterpret(Int32,in_bytes))
     else
         throw(ArgumentError("Cannot convert bytes to integer array. Number of bytes parsed is wrong"))
     end    
@@ -41,7 +41,8 @@ end
 Convert an integer array into a byte arrays.
 """
 function bytes(in_ints::Array{T,1}) where {T<:Integer}
-    return reinterpret(UInt8,ntoh(in_ints))
+    out_array=UInt8[]
+    return append!(out_array,reinterpret(UInt8,ntohofarray(in_ints)))
 end
 
 """
@@ -78,7 +79,7 @@ end
 Convert a list of strings to a list of byte arrays.
 """
 function encodechainlist(in_strings::Array{String,1})
-    out_bytes = b""
+    out_bytes=UInt8[]
     for in_s in in_strings
         append!(out_bytes, transcode(UInt8,in_s))
         for i=1:(CHAIN_LEN - length(in_s))

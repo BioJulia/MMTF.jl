@@ -26,6 +26,7 @@ julia> Pkg.add("MMTF")
 ## Usage
 **To download and parse a MMTF file as Julia Dict from RCSB database.**
 ```julia
+julia> using MMTF
 julia> MMTFdict = fetchmmtf("4HHB")
 Dict{String,Any} with 39 entries:
   "chainNameList" => String["A", "B", "C", "D", "A", "B", "B", "C", "D", "D", "A", "B", "C", "D"]
