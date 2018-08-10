@@ -1,6 +1,6 @@
 module TestMMTF
 
-using Base.Test
+using Test
 using MMTF
 
 @testset "Codecs - Decoding Test" begin
