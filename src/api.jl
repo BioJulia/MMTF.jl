@@ -151,13 +151,5 @@ pdbid: ID of the PDB file to be fetched and decoded.
 function fetchmmtf(pdbid)
     tempfile = tempname()
     download("$(BASE_URL)/$(pdbid).mmtf.gz",tempfile)
-    if VERSION < v"0.7-"
-        if is_windows()
-            parsemmtf(tempfile, gzip=false)
-        else
-            parsemmtf(tempfile,gzip=true)  
-        end
-    else
-        parsemmtf(tempfile,gzip=true)
-    end
+    parsemmtf(tempfile,gzip=true)
 end

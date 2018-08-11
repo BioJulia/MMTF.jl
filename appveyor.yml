@@ -1,7 +1,7 @@
 environment:
   matrix:
-  - julia_version: 0.6
   - julia_version: 0.7
+  - julia_version: 1.0
   - julia_version: latest
 
 platform:
@@ -31,6 +31,9 @@ install:
 build_script:
   - echo "%JL_BUILD_SCRIPT%"
   - C:\julia\bin\julia -e "%JL_BUILD_SCRIPT%"
+
+before_test:
+  - ps: "[Net.ServicePointManager]::SecurityProtocol = 'Ssl3, Tls, Tls11, Tls12'"
 
 test_script:
   - echo "%JL_TEST_SCRIPT%"

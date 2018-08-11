@@ -9,7 +9,7 @@ version = "0.4.0"
 
 [[CodecZlib]]
 deps = ["BinaryProvider", "Compat", "Libdl", "Test", "TranscodingStreams"]
-git-tree-sha1 = "c59200e54ffb3eadb796d7fabbdc277f31b7e607"
+git-tree-sha1 = "c688ead6edc049fc88f9df86489c3d4980b3b425"
 repo-rev = "master"
 repo-url = "https://github.com/bicycle1885/CodecZlib.jl.git"
 uuid = "944b1d66-785c-5afd-91f1-9de20f533193"
@@ -58,10 +58,12 @@ uuid = "d6f4376e-aef5-505a-96c1-9c027394607a"
 uuid = "a63ad114-7e13-5084-954f-fe012c677804"
 
 [[MsgPack]]
-deps = ["Compat"]
-git-tree-sha1 = "a4f25ea105a650a9018af525a372f767b3ca1c70"
-uuid = "99f44e22-a591-53d1-9472-aa23ef4bd671"
-version = "0.1.1"
+deps = ["Compat", "Random", "Test"]
+git-tree-sha1 = "c44b3470fa98705f9c12cb44ec9504de3af027ad"
+repo-rev = "master"
+repo-url = "https://github.com/JuliaIO/MsgPack.jl.git"
+uuid = "4f058140-9cb3-11e8-3a24-f18bc08013ca"
+version = "0.2.0"
 
 [[Pkg]]
 deps = ["Dates", "LibGit2", "Markdown", "Printf", "REPL", "Random", "SHA", "UUIDs"]
@@ -105,10 +107,10 @@ deps = ["Distributed", "InteractiveUtils", "Logging", "Random"]
 uuid = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
 
 [[TranscodingStreams]]
-deps = ["Compat", "Pkg", "Random", "Test"]
-git-tree-sha1 = "9ace282f45e71d2fd3fcb752ca337452560f3108"
+deps = ["Pkg", "Random", "Test"]
+git-tree-sha1 = "530829b1099ad19067dad83d31f278cf81e68a51"
 uuid = "3bb67fe8-82b1-5028-8e26-92a6c54297fa"
-version = "0.5.4"
+version = "0.6.1"
 
 [[UUIDs]]
 deps = ["Random"]
