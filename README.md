@@ -2,8 +2,7 @@
 
 **Latest Release:**
 
-[![Latest Release](https://img.shields.io/badge/release-v0.0.1-blue.svg)](https://github.com/BioJulia/MMTF.jl/releases/latest)
-[![MMTF](http://pkg.julialang.org/badges/MMTF_0.6.svg)](http://pkg.julialang.org/detail/MMTF)
+[![Latest Release](https://img.shields.io/badge/release-v0.1.0-blue.svg)](https://github.com/BioJulia/MMTF.jl/releases/latest)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](https://github.com/BioJulia/MMTF.jl/blob/master/LICENSE)
 [![BioJulia Maintainer : joels94](https://img.shields.io/badge/BioJulia%20Maintainer-joels94-orange.svg)](https://github.com/joels94)
 
@@ -20,13 +19,18 @@ The Macromolecular Transmission Format (MMTF) is a new compact binary format to 
 Install MMTF.jl from the Julia REPL:
 
 ```julia
-julia> Pkg.add("MMTF")
+julia> using Pkg
+julia> add("MMTF")
+```
+
+To start using the package:
+```julia
+julia> using MMTF
 ```
 
 ## Usage
 **To download and parse a MMTF file as Julia Dict from RCSB database.**
 ```julia
-julia> using MMTF
 julia> MMTFdict = fetchmmtf("4HHB")
 Dict{String,Any} with 39 entries:
   "chainNameList" => String["A", "B", "C", "D", "A", "B", "B", "C", "D", "D", "A", "B", "C", "D"]
@@ -46,11 +50,11 @@ Dict{String,Any} with 39 entries:
 
 **To parse an existing MMTF file as Julia Dict.**
 ```julia
-julia> MMTFDict = parsemmtf("path/to/MMTF/file",gzip=false)
+julia> MMTFDict = parsemmtf("path/to/MMTF/file", gzip=false)
 ```
 `gzip::Bool` - if set to `true`, parses a compressed MMTF file.
 
-**To write a valid Julia Dict as MMTF file**
+**To write a valid MMTF Julia Dict as MMTF file**
 ```julia
 julia> writemmtf(MMTFdict, "path/to/write/MMTF/file", gzip=false)
 ```
