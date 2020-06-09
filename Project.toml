@@ -9,5 +9,5 @@ MsgPack = "99f44e22-a591-53d1-9472-aa23ef4bd671"
 Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
 
 [compat]
-CodecZlib = "0.5"
+CodecZlib = "0.5, 0.6, 0.7"
 MsgPack = "0.2"
