@@ -1,7 +1,7 @@
 name = "MMTF"
 uuid = "6f5bf382-9b31-11e8-116b-87f1ded88cd6"
 authors = ["Joel S <joel.programmer@outlook.com>"]
-version = "0.1.0"
+version = "0.1.1"
 
 [deps]
 CodecZlib = "944b1d66-785c-5afd-91f1-9de20f533193"
