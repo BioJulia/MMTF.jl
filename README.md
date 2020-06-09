@@ -2,7 +2,7 @@
 
 **Latest Release:**
 
-[![Latest Release](https://img.shields.io/badge/release-v0.1.0-blue.svg)](https://github.com/BioJulia/MMTF.jl/releases/latest)
+[![Latest Release](https://img.shields.io/github/release/BioJulia/MMTF.jl.svg)](https://github.com/BioJulia/MMTF.jl/releases/latest)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](https://github.com/BioJulia/MMTF.jl/blob/master/LICENSE)
 [![BioJulia Maintainer : joels94](https://img.shields.io/badge/BioJulia%20Maintainer-joels94-orange.svg)](https://github.com/joels94)
 
@@ -13,14 +13,15 @@
 [![codecov](https://codecov.io/gh/BioJulia/MMTF.jl/branch/master/graph/badge.svg)](https://codecov.io/gh/BioJulia/MMTF.jl)
 
 ## Description
-The Macromolecular Transmission Format (MMTF) is a new compact binary format to transmit and store biomolecular structures for fast 3D visualization and analysis
+The Macromolecular Transmission Format (MMTF) is a new compact binary format to transmit and store biomolecular structures for fast 3D visualization and analysis.
+MMTF.jl lets you encode and decode MMTF files.
 
 ## Installation
 Install MMTF.jl from the Julia REPL:
 
 ```julia
 julia> using Pkg
-julia> add("MMTF")
+julia> Pkg.add("MMTF")
 ```
 
 To start using the package:
@@ -60,13 +61,15 @@ julia> writemmtf(MMTFdict, "path/to/write/MMTF/file", gzip=false)
 ```
 `gzip::Bool` - if set to `true`, writes a compressed MMTF file.
 
+See [BioStructures.jl](https://github.com/BioJulia/BioStructures.jl) for how to read MMTF files into a hierarchical data structure and convert them to PDB/mmCIF files.
+
 ## Contributing and Questions
 
 We appreciate contributions from users including reporting bugs, fixing issues,
 improving performance and adding new features.
 
 If you have a question about
-contributing or using this package, our [Gitter chat room](https://gitter.im/BioJulia/Bio.jl) would be
+contributing or using this package, our [Gitter chat room](https://gitter.im/BioJulia/General) would be
 the best starting place to communicate with other users and developers.
 You are encouraged to use the [Bio category of the Julia discourse
 site](https://discourse.julialang.org/c/domain/bio) for technical questions.
