@@ -167,6 +167,7 @@ function decodearray(input_array::Array{UInt8,1})
         throw(ArgumentError("Invalid codec while parsing MMTF data!"))
     end
 end
+decodearray(input_array::Array{<:Any,1}) = decodearray(convert(Vector{UInt8}, input_array))
 
 """
 Encode the array using the method and then add the header to this array.
