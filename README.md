@@ -63,6 +63,12 @@ julia> writemmtf(MMTFdict, "path/to/write/MMTF/file", gzip=false)
 
 See [BioStructures.jl](https://github.com/BioJulia/BioStructures.jl) for how to read MMTF files into a hierarchical data structure and convert them to PDB/mmCIF files.
 
+## Citation
+
+If you use MMTF.jl, please cite the BioStructures.jl paper where it is mentioned:
+
+Greener JG, Selvaraj J and Ward BJ. BioStructures.jl: read, write and manipulate macromolecular structures in Julia, *Bioinformatics* (2020) - [link](https://academic.oup.com/bioinformatics/advance-article/doi/10.1093/bioinformatics/btaa502/5837108?guestAccessKey=aec90643-1d43-4521-9883-4a4a669187da)
+
 ## Contributing and Questions
 
 We appreciate contributions from users including reporting bugs, fixing issues,
