@@ -8,8 +8,7 @@
 
 **Development Status:**
 
-[![Build Status](https://travis-ci.org/BioJulia/MMTF.jl.svg?branch=master)](https://travis-ci.org/BioJulia/MMTF.jl)
-[![Build status](https://ci.appveyor.com/api/projects/status/eptv612bhx0fa6nt/branch/master?svg=true)](https://ci.appveyor.com/project/jgreener64/mmtf-jl/branch/master)
+[![Build status](https://github.com/BioJulia/MMTF.jl/workflows/CI/badge.svg)](https://github.com/BioJulia/MMTF.jl/actions)
 [![codecov](https://codecov.io/gh/BioJulia/MMTF.jl/branch/master/graph/badge.svg)](https://codecov.io/gh/BioJulia/MMTF.jl)
 
 ## Description
