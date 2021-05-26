@@ -1,7 +1,8 @@
 include("codec.jl")
 
-using MsgPack
 using CodecZlib
+using Downloads
+using MsgPack
 
 export decodedata,encodedata,parsemmtf,writemmtf,fetchmmtf
 
@@ -150,6 +151,6 @@ pdbid: ID of the PDB file to be fetched and decoded.
 """
 function fetchmmtf(pdbid)
     tempfile = tempname()
-    download("$(BASE_URL)/$(pdbid).mmtf.gz",tempfile)
+    Downloads.download("$(BASE_URL)/$(pdbid).mmtf.gz",tempfile)
     parsemmtf(tempfile,gzip=true)
 end
