@@ -12,8 +12,10 @@
 [![codecov](https://codecov.io/gh/BioJulia/MMTF.jl/branch/master/graph/badge.svg)](https://codecov.io/gh/BioJulia/MMTF.jl)
 
 ## Description
-The Macromolecular Transmission Format (MMTF) is a new compact binary format to transmit and store biomolecular structures for fast 3D visualization and analysis.
+The Macromolecular Transmission Format (MMTF) is a compact binary format to transmit and store biomolecular structures for fast 3D visualization and analysis.
 MMTF.jl lets you encode and decode MMTF files.
+
+Note that as of July 2024 [MMTF files are not available to download from the RCSB PDB](https://www.rcsb.org/news/65a1af31c76ca3abcc925d0c) and the BinaryCIF format is preferred.
 
 ## Installation
 Install MMTF.jl from the Julia REPL:
